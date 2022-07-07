@@ -7,7 +7,8 @@ const exec = util.promisify(require('child_process').exec);
 
 //start
 
-var imgUrl = myArgs[0]
+var barsCount = myArgs[0]
+var imgUrl = myArgs[1]
 console.log('imgUrl=',imgUrl)
 makeFlag(imgUrl)
 
@@ -44,7 +45,7 @@ async function runImageMagikCmd(colors) {
         console.log('runImageMagikCmd colors=',colors)
         //create cmd
         let colorsStr = ``
-        for(var x = 0; x < colors.length; x++){
+        for(var x = 0; x < barsCount; x++){
             let color = colors[x]
             colorsStr=`${colorsStr} xc:${color}`
         }
